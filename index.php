@@ -1,9 +1,13 @@
 <form method="post" action="redimensiona.php" enctype="multipart/form-data">
   Largura
-  <input type="text" name="largura">*Essa é a largura máxima, não o tamanho final da largura<br><br>
+  <input type="text" name="largura" placeholder="em pixels"><br><br>
 
   Altura:
-  <input type="text" name="altura">*Essa é a altura máxima, não o tamanho final da altura<br><br>
+  <input type="text" name="altura" placeholder="em pixels"><br><br>
+
+  Deseja manter a proporção?
+  <input type="radio" name="proporcao" value="1" checked>Sim
+  <input type="radio" name="proporcao" value="2">Não<br><br>
 
   <input type="file" name="arquivo[]" multiple><br><br>
 
