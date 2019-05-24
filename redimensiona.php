@@ -20,14 +20,6 @@ function redimensiona($imagem_final, $imagem_original,$largura, $altura, $largur
     imagejpeg($imagem_final, 'imagens/'.$i.'watermark.png');
 }
 
-/*function marca($imagem_final, $largura, $altura, $i){
-  $watermark = 'imagens/watermark.png';
-  list($largura_original, $altura_original) = getImageSize($watermark);
-  $watermark = imagecreatefrompng($watermark);
-  imagecopyresampled($imagem_final, $watermark,0,0,0,0,$largura, $altura, $largura_original, $altura_original);
-  imagejpeg($imagem_final, 'imagens/'.$i.'.jpeg',100);
-}*/
-
 $largura = $_POST['largura'];
 $altura = $_POST['altura'];
 $manter_proporcao = $_POST['proporcao'];
@@ -54,12 +46,14 @@ for($i = 0; $i < count($arquivos['tmp_name']); $i++){
     //marca("imagens/'.$i.'.jpeg", $largura, $altura, $i);
     echo '<img src="imagens/'.$i.'watermark.jpeg"><br><br>';
     echo '<a href="imagens/'.$i.'watermark.jpeg" download><button>Download</button></a>';
-    echo '<a href="imagens/'.$i.'.jpeg" download><button>Download Sem Marca D\'água</button></a>';
+    echo '<a href="imagens/'.$i.'.jpeg" download><button>Download Sem Marca D\'água</button></a><br><br>';
   } else {
     $imagem_original = imagecreatefrompng($arquivos['tmp_name'][$i]);
     redimensiona($imagem_final, $imagem_original,$largura, $altura, $largura_original, $altura_original, $i, 'png');
     //imagepng($imagem_final, 'imagens/'.$i.'.png');
     echo '<img src="imagens/'.$i.'watermark.png"><br><br>';
+    echo '<a href="imagens/'.$i.'watermark.png" download><button>Download</button></a>';
+    echo '<a href="imagens/'.$i.'.png" download><button>Download Sem Marca D\'água</button></a><br><br>';
   }
 
 }

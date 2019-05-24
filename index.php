@@ -1,15 +1,46 @@
-<form method="post" action="redimensiona.php" enctype="multipart/form-data">
-  Largura
-  <input type="text" name="largura" placeholder="em pixels"><br><br>
+<?php
+require_once 'cabecalho.html';
+?>
 
-  Altura:
-  <input type="text" name="altura" placeholder="em pixels"><br><br>
+<div class="container formulario">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 offset-md-3">
+      <form method="post" action="redimensiona.php" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="largura">Largura: </label>
+          <input type="text" name="largura" placeholder="em pixels" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="altura">Altura: </label>
+          <input type="text" name="altura" placeholder="em pixels" class="form-control">
+        </div>
 
-  Deseja manter a proporção?
-  <input type="radio" name="proporcao" value="1" checked>Sim
-  <input type="radio" name="proporcao" value="2">Não<br><br>
+        <div class="form-group">
+          <label>Deseja manter a proporção?</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="proporcao" id="proporcao1" value="1" checked>
+            <label class="form-check-label" for="proporcao1">Sim</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="proporcao" id="proporcao2" value="2">
+            <label class="form-check-label" for="proporcao2">Não</label>
+          </div>
+        </div>
 
-  <input type="file" name="arquivo[]" multiple><br><br>
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="arquivo[]" multiple id="arquivo" aria-describedby="arquivo">
+            <label class="custom-file-label" for="arquivo">Escolha os Arquivos</label>
+          </div>
+        </div>
 
-  <input type="submit" value="Redimensionar">
-</form>
+        <input type="submit" value="Redimensionar">
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<?php
+require_once 'rodape.html';
+?>
