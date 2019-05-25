@@ -34,7 +34,7 @@ require_once 'cabecalho.html';
           </div>
         </div>
 
-        <input type="submit" value="Redimensionar">
+        <button type="submit" class="btn btn-primary">Redimensionar</button>
       </form>
     </div>
 
